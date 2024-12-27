@@ -1,16 +1,17 @@
-# Black-Scholes Option Pricing with Greeks Analysis
+# **Black-Scholes Option Pricing with Greeks Analysis**
+
 This Python program calculates the price of options using the Black-Scholes model and provides a detailed sensitivity analysis of Greeks, including Delta, Gamma, Vega, Theta, and Rho. It also allows users to update parameters interactively to observe changes in the Greeks and option prices.
 
+---
 
-
-# Features
+## **Features**
 
 - **Option Pricing**: Computes the price of European call and put options using the Black-Scholes formula.
 - **Greeks Analysis**: Calculates the sensitivities (Delta, Gamma, Vega, Theta, Rho) for a given option.
 - **Interactive Mode**: Allows users to update parameters (stock price, strike price, maturity, risk-free rate, volatility) to see real-time updates to Greeks and option prices.
 - **User-Friendly Input**: Guides users through input steps for accurate calculations.
 
-
+---
 
 ## **How It Works**
 
@@ -24,8 +25,14 @@ This Python program calculates the price of options using the Black-Scholes mode
 
 2. **Black-Scholes Model**:
    - Computes the option price using the following formula:
-     - Call option price: 
-     - Put option price: 
+     \[
+     d1 = \frac{\ln(\frac{S}{K}) + (r + \frac{\sigma^2}{2})T}{\sigma\sqrt{T}}
+     \]
+     \[
+     d2 = d1 - \sigma\sqrt{T}
+     \]
+     - Call option price: \( S \cdot N(d1) - K \cdot e^{-rT} \cdot N(d2) \)
+     - Put option price: \( K \cdot e^{-rT} \cdot N(-d2) - S \cdot N(-d1) \)
 
 3. **Sensitivity Analysis (Greeks)**:
    - Delta: Sensitivity to stock price changes.
@@ -119,3 +126,4 @@ Gamma: 0.0137
 Vega: 37.2604
 Theta: -0.0387
 Rho: 31.2875
+```
